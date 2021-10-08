@@ -22,7 +22,7 @@
                     @csrf
 
                     @error('email')
-                        <div class="py-2 px-3 w-auto mb-4 bg-red-600 rounded">
+                        <div class="py-2 px-3 w-auto mb-4 bg-red-600 rounded" x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 3000)">
                             <p class="text-white font-bold">{{ $message }}</p>
                         </div>
                     @enderror
@@ -36,6 +36,7 @@
             </div>
         </div>
     </div>
+    <script src="//unpkg.com/alpinejs" defer></script>
     @notifyJs
     <x:notify-messages />
 </body>
